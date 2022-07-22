@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:navigation_sample"
+             x:Class="navigation_sample.Page2login">
+    <ContentPage.BindingContext>
+        <local:bindingclass/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Brown" >
+            <Frame CornerRadius="20" BackgroundColor="BurlyWood"
+                   Margin="0,60,0,0" VerticalOptions="Center">
+                <StackLayout>
+                    <Entry Placeholder="type your email here"
+                   x:Name="email"/>
+                    <Entry Placeholder="type password"
+                   IsPassword="True"/>
+                    <Entry Placeholder="type username"
+                   x:Name="username" />
+                    <Button x:Name="loginbtn"
+                    Text="LOG IN"
+                    Clicked="loginbtn_Clicked"/>
+                </StackLayout>
+            </Frame>
+            <!--<Label TextColor="Black" Text="{Binding UserName}"/>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

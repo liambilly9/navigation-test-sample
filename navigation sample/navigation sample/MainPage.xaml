@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+       xmlns:local="clr-namespace:navigation_sample"
+       x:Class="navigation_sample.MainPage">
+
+    <Shell.BindingContext>
+        <local:bindingclass/>
+    </Shell.BindingContext>
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="RoyalBlue" Background="avatarprof.png">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <ImageButton Source="avatarprof.png" 
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         CornerRadius="200"
+                         x:Name="myprof"
+                         Clicked="myprof_Clicked"
+                         Aspect="AspectFill"/>
+            <Label Text="{Binding UserName,Mode=TwoWay}"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False" >
+        <ShellContent ContentTemplate="{DataTemplate local:Page1}"
+                      Title="page1" Icon="maincover.jpg"/>
+    </FlyoutItem>
+
+</Shell>
