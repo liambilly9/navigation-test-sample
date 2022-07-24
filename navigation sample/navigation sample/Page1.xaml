@@ -9,14 +9,23 @@
     <ContentPage.Content>
         <RefreshView >
             <StackLayout>
-            <Frame HeightRequest="400">
+            <Frame HeightRequest="400" HasShadow="True">
                 <ScrollView>
-                    <Label TextColor="Black"
+                        <StackLayout>
+                            <Label TextColor="Black"
+                           BackgroundColor="Red"
                            HorizontalOptions="Center"
                            x:Name="lyrics"/>
-                </ScrollView>
-            </Frame>
-            <Label Text="{Binding UserName}" TextColor="black"/>
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+                <Frame HeightRequest="100" HasShadow="True">
+                    <ScrollView >
+                            <WebView x:Name="lsource" HeightRequest="2000"/>
+                        
+                    </ScrollView>
+                </Frame>
+                <Label Text="{Binding UserName}" TextColor="black"/>
             <Button Text="show lyrics"
                     x:Name="show"
                     Clicked="show_Clicked"/>
