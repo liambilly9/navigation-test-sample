@@ -20,10 +20,13 @@ namespace navigation_sample
         private async void loginbtn_Clicked(object sender, EventArgs e)
         {
             MainPage mainPage = new MainPage();
+            Page1 page1 = new Page1();
             var thename = username.Text;
-            mainPage.BindingContext=new bindingclass(thename);
-            
-            await Navigation.PopModalAsync();
+            page1.BindingContext=new bindingclass(thename);
+            MessagingCenter.Send<Page,string>(this,"LOGIN",thename);
+            //await Navigation.PushModalAsync(page1);
+            await Shell.Current.GoToAsync("..");
+            //await Shell.Current.Navigation.PopAsync();
         }
     }
 }

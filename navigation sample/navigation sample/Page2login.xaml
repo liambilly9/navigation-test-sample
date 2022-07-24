@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:navigation_sample"
-             x:Class="navigation_sample.Page2login">
+             x:Class="navigation_sample.Page2login"
+             Shell.PresentationMode="Modal">
     <ContentPage.BindingContext>
         <local:bindingclass/>
     </ContentPage.BindingContext>
@@ -15,13 +16,13 @@
                     <Entry Placeholder="type password"
                    IsPassword="True"/>
                     <Entry Placeholder="type username"
-                   x:Name="username" />
+                   x:Name="username" Text="{Binding UserName}"/>
                     <Button x:Name="loginbtn"
                     Text="LOG IN"
                     Clicked="loginbtn_Clicked"/>
                 </StackLayout>
             </Frame>
-            <!--<Label TextColor="Black" Text="{Binding UserName}"/>-->
+            <Label TextColor="Black" Text="{Binding UserName}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

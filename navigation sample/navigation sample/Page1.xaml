@@ -1,13 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:navigation_sample"
              x:Class="navigation_sample.Page1">
+    <ContentPage.BindingContext>
+        <local:bindingclass/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                   TextColor="Black"/>
-        </StackLayout>
+        <RefreshView >
+            <StackLayout>
+            <Frame HeightRequest="400">
+                <ScrollView>
+                    <Label TextColor="Black"
+                           HorizontalOptions="Center"
+                           x:Name="lyrics"/>
+                </ScrollView>
+            </Frame>
+            <Label Text="{Binding UserName}" TextColor="black"/>
+            <Button Text="show lyrics"
+                    x:Name="show"
+                    Clicked="show_Clicked"/>
+            </StackLayout>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

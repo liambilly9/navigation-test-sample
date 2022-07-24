@@ -27,6 +27,7 @@
                          Aspect="AspectFill"/>
             <Label Text="{Binding UserName,Mode=TwoWay}"
                    Grid.Column="1"
+                   x:Name="username"
                    Grid.Row="0"
                    TextColor="White"
                    VerticalTextAlignment="Center"/>
@@ -35,7 +36,7 @@
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False" >
         <ShellContent ContentTemplate="{DataTemplate local:Page1}"
-                      Title="page1" Icon="maincover.jpg"/>
+                      Title="page1" Icon="maincover.jpg" Route="page1"/>
     </FlyoutItem>
 
 </Shell>
